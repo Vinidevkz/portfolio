@@ -539,3 +539,9 @@ body.dark-mode .download-btn {
 body.dark-mode .download-btn:hover {
     background-color: #4a4a4a;
 }
+
+.skill-icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 8px;
+}
