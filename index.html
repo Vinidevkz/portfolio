@@ -25,19 +25,41 @@
         </div>
 
         <div class="dark-mode-div">
-            <button id="theme-toggle" class="theme-btn"><i class="fas fa-moon"></i></button>
+            <button class="theme-btn theme-toggle-btn" aria-label="Alternar tema"><i class="fas fa-moon"></i></button>
         </div>
-        
     </div>
 
     <div class="content">
-        <div class="top-bar">
-            <button class="tab-btn" data-tab="curriculo"><p>Currículo</p></button>
-            <button class="tab-btn" data-tab="projetos"><p>Projetos</p></button>
-            <button class="tab-btn" data-tab="certificacoes"><p>Certificações</p></button>
-            <!----
-            <button class="tab-btn" data-tab="sobre"><p>Sobre</p></button>
-            -->
+        <div class="top-nav">
+            <div class="top-bar">
+                <button class="tab-btn" data-tab="curriculo"><p>Currículo</p></button>
+                <button class="tab-btn" data-tab="projetos"><p>Projetos</p></button>
+                <button class="tab-btn" data-tab="certificacoes"><p>Certificações</p></button>
+                <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Abrir menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <!----
+                <button class="tab-btn" data-tab="sobre"><p>Sobre</p></button>
+                -->
+            </div>
+
+            <div class="mobile-menu" id="mobile-menu">
+                <div class="mobile-menu-links">
+                    <a href="https://www.linkedin.com/in/vinicius-eduardo2026/" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/Vinidevkz" target="_blank" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://wa.me/5511951684161" target="_blank" title="Whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+
+                <button class="theme-btn theme-toggle-btn mobile-theme-btn" aria-label="Alternar tema">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
         </div>
 
         <div class="center-content">
@@ -89,7 +111,7 @@
                     <div class="cs3">
 
                         <div class="info">
-                            <h3>Experiência Profissional: </h3>
+                            <h3>Experiência: </h3>
                             <p><strong>• Monitor Acadêmico - 03/2026 - Presente</strong></p>
 
                             <p>Atuo como Monitor Acadêmico nas disciplinas de Algoritmos e Lógica de Programação e Linguagem de Programação (Java), oferecendo suporte a alunos de períodos anteriores.</p>
@@ -99,7 +121,7 @@
 
                 </div>
 
-            <button class="download-btn" onclick="window.open('src/curriculo.pdf', '_blank')"><i class="fas fa-download"></i>  Download CV</button>
+            <button class="download-btn" onclick="window.open('src/Vinicius Eduardo CV2026.pdf', '_blank')"><i class="fas fa-download"></i>  Download CV</button>
         </div>
 
         <div id="projetos" class="tab-content">

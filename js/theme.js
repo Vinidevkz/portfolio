@@ -1,39 +1,41 @@
 // Script para gerenciar o modo noturno
 document.addEventListener('DOMContentLoaded', function() {
-    const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
-    
-    if (!themeToggle) {
-        console.error('Botão de tema não encontrado!');
+    const themeButtons = document.querySelectorAll('.theme-toggle-btn');
+
+    if (themeButtons.length === 0) {
+        console.error('Botões de tema não encontrados!');
         return;
     }
-    
+
     const savedTheme = localStorage.getItem('theme') || 'light';
     if (savedTheme === 'dark') {
         body.classList.add('dark-mode');
-        updateButtonIcon(true);
+        updateButtonIcons(true);
     }
-    
-    themeToggle.addEventListener('click', function() {
-        console.log('Botão clicado!');
-        body.classList.toggle('dark-mode');
-        
-        const isDarkMode = body.classList.contains('dark-mode');
-        console.log('Modo noturno ativado:', isDarkMode);
-        
-        localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-        
-        updateButtonIcon(isDarkMode);
+
+    themeButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            body.classList.toggle('dark-mode');
+
+            const isDarkMode = body.classList.contains('dark-mode');
+            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+            updateButtonIcons(isDarkMode);
+        });
     });
-    
-    function updateButtonIcon(isDarkMode) {
-        const icon = themeToggle.querySelector('i');
-        if (isDarkMode) {
-            icon.className = 'fas fa-sun';
-            themeToggle.title = 'Modo claro';
-        } else {
-            icon.className = 'fas fa-moon';
-            themeToggle.title = 'Modo noturno';
-        }
+
+    function updateButtonIcons(isDarkMode) {
+        themeButtons.forEach(function(button) {
+            const icon = button.querySelector('i');
+            if (icon) {
+                if (isDarkMode) {
+                    icon.className = 'fas fa-sun';
+                    button.title = 'Modo claro';
+                } else {
+                    icon.className = 'fas fa-moon';
+                    button.title = 'Modo noturno';
+                }
+            }
+        });
     }
 });
